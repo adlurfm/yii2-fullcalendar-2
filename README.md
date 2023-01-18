@@ -12,7 +12,7 @@ FullCalendar.io component for Yii2
             'weekNumbers' => true,
             'selectable'  => true,
             'initialView' => 'timeGridWeek',
-            'events' =>Url::to(['berthing-events']),
+            'events' =>Url::to(['site/events']),
             'eventTimeFormat'=> [ // like '14:30'
                 'hour'=>'2-digit',
                 'minute'=>'2-digit',
