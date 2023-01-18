@@ -17,7 +17,7 @@ class FullCalendar extends \yii\base\Widget{
     //Default values for widget
     public $clientOptions = [
 		'weekends' => true,
-		'default'  => 'agendaDay',
+		'initialView'  => 'dayGridMonth',
 		'editable' => false,
 	];
 
@@ -43,8 +43,6 @@ class FullCalendar extends \yii\base\Widget{
 		if (!isset($this->options['class'])) {
 			$this->options['class'] = 'fullcalendar';
 		}
-
-		//parent::init();
 	}
 
 
