@@ -1,6 +1,17 @@
 # Yii2-Fullcalendar-2
 FullCalendar.io component for Yii2
 
+## Installation
+```sh
+$ php composer.phar require adlurfm/yii2-fullcalendar-2
+```
+or add 
+```sh
+"adlurfm/yii2-fullcalendar-2": "dev-main"
+```
+to the `require` section of your `composer.json` file.
+
+## Usage
 ```php
 <?= FullCalendar::widget([
         'options'       => [
@@ -22,3 +33,6 @@ FullCalendar.io component for Yii2
         ],
     ]); ?>
 ```
+
+Read more options at - [fullcalendar.io](https://fullcalendar.io/docs)
+
