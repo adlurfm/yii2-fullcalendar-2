@@ -13,6 +13,8 @@ to the `require` section of your `composer.json` file.
 
 ## Usage
 ```php
+
+//View File
 <?= FullCalendar::widget([
         'options'       => [
             'id'       => 'calendar',
@@ -32,6 +34,28 @@ to the `require` section of your `composer.json` file.
             ]
         ],
     ]); ?>
+    
+```
+
+```php
+
+//Controller File - Return as JSON format
+public function actionEvents($start, $end)
+{
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        return [
+                [
+                        'title'=>'All Day Event',
+                        'start'=>'2023-01-01'
+                ],
+                [
+                        'title'=>'Long Event',
+                        'start'=>'2023-01-04',
+                        'end'=>'2023-01-11'
+                ],
+        ];
+        //Read more about event at https://fullcalendar.io/docs/event-parsing
+}
 ```
 
 Read more options at - [fullcalendar.io](https://fullcalendar.io/docs)
