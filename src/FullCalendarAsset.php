@@ -9,15 +9,15 @@ namespace Adlurfm\Fullcalendar;;
  */
 class FullCalendarAsset extends \yii\web\AssetBundle {
 
-    public $sourcePath = 'resources';
+    public $sourcePath = __DIR__.'\resources';
 
     public $css = [
-        'css\FullCalendar.css',
+        'css/FullCalendar.css',
     ];
 
     public $js = [
         //'dist\index.global.js',
-        'dist\index.global.min.js',
+        'dist/index.global.min.js',
     ];
 
     public $depends = [
