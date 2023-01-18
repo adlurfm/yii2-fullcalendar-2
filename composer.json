@@ -1,0 +1,34 @@
+{
+    "name": "adlurfm/yii2-fullcalendar-2",
+    "description": "FullCalendar.io component in Yii2",
+    "type": "yii2-extension",
+    "keywords": ["yii2", "fullcalendar", "calendar"],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/adlurfm/yii2-fullcalendar-2",
+        "source": "https://github.com/adlurfm/yii2-fullcalendar-2"
+    },
+    "authors": [
+        {
+            "name": "Adlur Rahman",
+            "email": "adlurfm@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    
+    
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Adlurfm\\Fullcalendar\\": "src/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
+    }
+}
