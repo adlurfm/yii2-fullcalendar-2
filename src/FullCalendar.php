@@ -26,7 +26,7 @@ class FullCalendar extends \yii\base\Widget{
 
     public $headerToolbar = [
 		'center' => 'title',
-		'left'   => 'prev,next, today',
+		'left'   => 'prev,next,today',
 		'right'  => 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
 	];
     //TODO list all the toolbars buttons
@@ -55,81 +55,20 @@ class FullCalendar extends \yii\base\Widget{
 	{
 		$fullcalendar_asset = FullCalendarAsset::register($this->view);
 
-		/* if ($this->theme === true) { // Register the theme
-			ThemeAsset::register($this->view);
-		} 
-
-		if (isset($this->options['language'])) {
-			$assets->language = $this->options['language'];
-		}
-
-		$assets->googleCalendar = $this->googleCalendar;
-        */
-
 		$this->clientOptions['headerToolbar'] = $this->headerToolbar;
 
         //{$this->options['id']}
         //{$this->getClientOptions()}
 
         $js_script = <<< JS
-        
 document.addEventListener('DOMContentLoaded', function() {
-
-    /* initialize the external events
-    -----------------------------------------------------------------*/
-
-    var containerEl = document.getElementById('external-events-list');
-    new FullCalendar.Draggable(containerEl, {
-    itemSelector: '.fc-event',
-    eventData: function(eventEl) {
-        return {
-        title: eventEl.innerText.trim()
-        }
-    }
-    });
-
-    //// the individual way to do it
-    // var containerEl = document.getElementById('external-events-list');
-    // var eventEls = Array.prototype.slice.call(
-    //   containerEl.querySelectorAll('.fc-event')
-    // );
-    // eventEls.forEach(function(eventEl) {
-    //   new FullCalendar.Draggable(eventEl, {
-    //     eventData: {
-    //       title: eventEl.innerText.trim(),
-    //     }
-    //   });
-    // });
-
-    /* initialize the calendar
-    -----------------------------------------------------------------*/
-
     var calendarEl = document.getElementById('{$this->options['id']}');
     var calendar = new FullCalendar.Calendar(calendarEl, {$this->getClientOptions()});
     calendar.render();
 });
 JS;
-
-/* TODO
-{
-  headerToolbar: {
-    left: 'prev,next today',
-    center: 'title',
-    right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-  },
-  editable: true,
-  droppable: true, // this allows things to be dropped onto the calendar
-  drop: function(arg) {
-    // is the "remove after drop" checkbox checked?
-    if (document.getElementById('drop-remove').checked) {
-      // if so, remove the element from the "Draggable Events" list
-      arg.draggedEl.parentNode.removeChild(arg.draggedEl);
-    }
-  }
-}
-*/
-		$this->view->registerJs(implode("\n", [$js_script,
-		]), \yii\web\View::POS_END);
+        $this->view->registerJs($js_script, \yii\web\View::POS_END);
+        echo "<div id='{$this->options['id']}'></div>";
 	}
 
     /**
