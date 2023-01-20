@@ -16,12 +16,10 @@ to the `require` section of your `composer.json` file.
 
 //View File
 <?= FullCalendar::widget([
-        'options'       => [
-            'id'       => 'calendar',
+        'id'       => 'calendar',
+        'clientOptions' => [
             'initialDate' => date('Y-m-d'),
             'timeZone'=>'Asia/Kuala_lumpur'
-        ],
-        'clientOptions' => [
             'weekNumbers' => true,
             'selectable'  => true,
             'initialView' => 'timeGridWeek',
