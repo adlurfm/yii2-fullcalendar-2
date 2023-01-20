@@ -19,7 +19,7 @@ to the `require` section of your `composer.json` file.
         'id'       => 'calendar',
         'clientOptions' => [
             'initialDate' => date('Y-m-d'),
-            'timeZone'=>'Asia/Kuala_lumpur'
+            'timeZone'=>'Asia/Kuala_lumpur',
             'weekNumbers' => true,
             'selectable'  => true,
             'initialView' => 'timeGridWeek',
